@@ -17,7 +17,7 @@ namespace TaskThree.Vehicles
             TimeTo100 = timeTo100;
         }
 
-        public Car() { }
+        private Car() { }
 
         public override void PrintInfo()
         {

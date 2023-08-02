@@ -16,7 +16,7 @@ namespace TaskThree.Vehicles
             CargoWeight = cargoWeight;
         }
 
-        public Lorry() { }
+        private Lorry() { }
 
         public override void PrintInfo()
         {

@@ -16,7 +16,7 @@ namespace TaskThree.Vehicles
 			NumberOfSits = numberOfSits;
 		}
 
-		public Bus() { }
+		private Bus() { }
 
 		public override void PrintInfo()
 		{

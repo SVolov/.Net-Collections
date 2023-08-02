@@ -5,6 +5,7 @@ using TaskThree.Vehicles;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using System;
+using TaskFive;
 
 class Program
 {
@@ -56,39 +57,15 @@ class Program
         };
 
         vehicles.VehiclesListObjects.Sort();
-        SerializeToXml(vehicles, "vechiclesSort.xml");
+        XML.SerializeToXml(vehicles, "vechiclesSort.xml");
 
         var vehiclesList = new VehiclesList();
         vehiclesList.VehiclesListObjects = vehicles.VehiclesListObjects.Where(v => v.Engine.Volume >= 1.5).ToList();
-        SerializeToXml(vehiclesList, "vechiclesVolumeMore1.5.xml");
+        XML.SerializeToXml(vehiclesList, "vechiclesVolumeMore1.5.xml");
 
         var vehiclesList2 = new VehiclesList();
         vehiclesList2.VehiclesListObjects = vehicles.VehiclesListObjects.Where(v => v.GetType() == typeof(Bus) || v.GetType() == typeof(Lorry))
             .ToList();
-        SerializeToXmlWithoutVolume(vehiclesList2, "vehiclesBusAndLorry.xml");
-    }
-
-    static void SerializeToXml(VehiclesList vehicles, string filePath)
-    {
-        XmlSerializer serializer = new XmlSerializer(typeof(VehiclesList));
-        using (TextWriter writer = new StreamWriter(filePath))
-        {
-            serializer.Serialize(writer, vehicles);
-        }
-    }
-
-    static void SerializeToXmlWithoutVolume(VehiclesList vehicles, string filePath)
-    {
-        XmlAttributeOverrides overrides = new XmlAttributeOverrides();
-        XmlAttributes attribs = new XmlAttributes();
-        attribs.XmlIgnore = true;
-        attribs.XmlElements.Add(new XmlElementAttribute("Volume"));
-        overrides.Add(typeof(Engine), "Volume", attribs);
-
-        XmlSerializer serializer = new XmlSerializer(typeof(VehiclesList), overrides);
-        using (TextWriter writer = new StreamWriter(filePath))
-        {
-            serializer.Serialize(writer, vehicles);
-        }
+        XML.SerializeToXmlWithoutVolume(vehiclesList2, "vehiclesBusAndLorry.xml");
     }
 }

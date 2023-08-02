@@ -19,6 +19,6 @@ namespace TaskThree.Parts
             Load = load;
         }
 
-        public Chassis() { }
+        private Chassis() { }
     }
 }

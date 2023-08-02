@@ -19,6 +19,6 @@ namespace TaskThree.Parts
             Gear = gear;
         }
 
-        public Transmission() { }
+        private Transmission() { }
     }
 }

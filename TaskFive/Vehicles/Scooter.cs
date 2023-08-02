@@ -16,7 +16,7 @@ namespace TaskThree.Vehicles
             NumberOfHelmets = numberOfHelmets;
         }
 
-        public Scooter() { }
+        private Scooter() { }
 
         public override void PrintInfo()
         {

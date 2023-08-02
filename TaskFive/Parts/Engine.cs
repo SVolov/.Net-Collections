@@ -14,7 +14,7 @@ namespace TaskThree.Parts
         public string Type;
         public int SerialNumber;
 
-        public Engine(int power, double volume, string type, int serialNumber)
+        public Engine(int power, double volume, string type, int serialNumber) 
         {
             Power = power;
             Volume = volume;
@@ -22,6 +22,6 @@ namespace TaskThree.Parts
             SerialNumber = serialNumber;
         }
 
-        public Engine() { }
+        private Engine()  { }
     }
 }

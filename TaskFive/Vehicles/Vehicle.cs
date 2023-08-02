@@ -9,14 +9,6 @@ using TaskThree.Parts;
 
 namespace TaskThree.Vehicles
 {
-    public class VehiclesList
-    {
-        [XmlArrayItem(typeof(Car))]
-        [XmlArrayItem(typeof(Bus))]
-        [XmlArrayItem(typeof(Lorry))]
-        [XmlArrayItem(typeof(Scooter))]
-        public List<Vehicle> VehiclesListObjects { get; set; }
-    }
 
     public class Vehicle : IComparable<Vehicle>
     {
